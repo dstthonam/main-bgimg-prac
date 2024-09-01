@@ -20,7 +20,7 @@
     }
     .hero {
         position: none;
-        margin-top: 350px;
+        margin-top: 250px;
     }
     .hammenu {
         display: block;
@@ -29,9 +29,6 @@
 /* 토글 버튼 효과 */
     .shbx {
         display: none;
-    }
-    .shbx.active {
-        display: block;
     }
 }
 @media screen and (min-width: 768px) {

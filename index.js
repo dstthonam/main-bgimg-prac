@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtns.forEach(toggleBtn => {
         toggleBtn.addEventListener('click', () => {
             shbxElements.forEach(shbx => {
-                shbx.classList.toggle('active');
                 
                 const shbxDisplay = window.getComputedStyle(shbx).display;
 
@@ -14,10 +13,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     hd.style.height = "350px";
                     shbx.style.display = "block";
                 } else {
-                    hd.style.height = "75px"
+                    hd.style.height = "75px";
                     shbx.style.display = "none";
                 }
             });
         });
-    })
+    });
+
+    const desktopMinWidth = window.matchMedia('(min-width : 768px)').matches;
+    
+    if (desktopMinWidth) {
+        shbxElements.forEach(shbx => {
+            const shbxDisplay = window.getComputedStyle(shbx).display;
+
+            if (shbxDisplay === "none") {
+                shbx.style.display = "block";
+                hd.style.height = "75px";
+            } else {
+                hd.style.height = "75px";
+            }
+        });
+    }
 });
